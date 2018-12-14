@@ -23,6 +23,12 @@ import java.io.IOException;
 public class WcApp{
 	public static void main(String[] args){
 		try{
+			if(args.length==0){
+				System.out.println("null");
+				args = new String[2];
+				args[0] = "hdfs://s202/home/centos/hadoop/app/wc";
+				args[1] = "hdfs://s202/home/centos/hadoop/app/wc/out";
+			}
 			JobConf config = new JobConf();
 //			config.addResource(new Path("file:///Volumes/D/bigdata/wc/"));
 			//设置输出路径
